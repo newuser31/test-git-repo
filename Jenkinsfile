@@ -1,17 +1,25 @@
 pipeline {
-  agent any
-  stages {
-    stage('build') {
-      steps {
-        git 'https://github.com/newuser31/test-git-repo.git/'
-      }
+    agent any
+    options {
+        skipStagesAfterUnstable()
     }
-
-    stage('Depoly') {
-      steps {
-        echo 'Biuld is done'
-      }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building'
+                      git 'https://github.com/newuser31/test-git-repo.git/'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+               
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+            }
+        }
     }
-
-  }
 }
