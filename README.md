@@ -6,4 +6,4 @@ my first repository on github
 I love :coffee: :pizza:, and :dancer:.
 
 
-echo"check ur jenkins is working now"
+check ur jenkins is working now
